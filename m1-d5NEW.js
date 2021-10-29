@@ -44,7 +44,9 @@ const crazySum = (two, one) => {
 /* WRITE YOUR ANSWER HERE */
 
 const crazyDiff = (giveNum) => {
-  giveNum > 19 ? console.log((giveNum % 19) * 3) : console.log(giveNum % 19);
+  giveNum > 19
+    ? console.log(Math.abs(giveNum - 19) * 3)
+    : console.log(Math.abs(giveNum - 19));
 };
 // crazyDiff(20);
 
@@ -54,15 +56,15 @@ const crazyDiff = (giveNum) => {
 
 /* WRITE YOUR ANSWER HERE */
 
-const boundary = (n) => {
-  // true ? (n >= 20 && n <= 100) || n === 400 : false;
+const boundary = (n) => ((n >= 20 && n <= 100) || n === 400 ? false : true);
 
-  if ((n >= 20 && n <= 100) || n === 400) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// if ((n >= 20 && n <= 100) || n === 400) {
+//   return true;
+// } else {
+//   return false;
+// }
+
+console.log("");
 // console.log(boundary(200));
 
 /* EXERCISE 5
@@ -71,14 +73,15 @@ const boundary = (n) => {
 */
 
 /* WRITE YOUR ANSWER HERE */
-
-const striviFy = function (str) {
-  if (str.startsWith("Strive")) {
-    return striviFy;
-  } else {
-    return "Strive" + str;
-  }
-};
+const strivify = (str) => (str.startsWith("Strive") ? str : "Strive " + str);
+// const striviFy = function (str) {
+//   if (str.startsWith("Strive")) {
+//     return str;
+//   } else {
+//     return "Strive" + str;
+//   }
+// };
+// console.log(strivify("STRIVE is Good ?"));
 
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
@@ -86,15 +89,16 @@ const striviFy = function (str) {
 */
 
 /* WRITE YOUR ANSWER HERE */
+const check3and7 = (int) => (int % 3 === 0 || int % 7 === 0 ? true : false);
 
-const check3and7 = function (int) {
-  if (int % 3 === 0 || int % 7 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
-// console.log(check3and7(6));
+// function check3and7(int) {
+//   if (int % 3 === 0 || int % 7 === 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+// console.log(check3and7(601));
 
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
@@ -102,15 +106,20 @@ const check3and7 = function (int) {
 
 /* WRITE YOUR ANSWER HERE */
 
-const reverseString = (str) => {
-  return str.split(``).reverse().join();
-};
-console.log(reverseString("strive"));
+const reverseString1 = (str) => str.split("").reverse().join("");
+
+// console.log(reverseString1("loohcS evirtS"));
+
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
 
 /* WRITE YOUR ANSWER HERE */
+
+const upperFirst = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+// console.log(upperFirst("bueno"));
 
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
@@ -118,11 +127,28 @@ console.log(reverseString("strive"));
 
 /* WRITE YOUR ANSWER HERE */
 
+function cutString(str) {
+  return str.slice(1, str.length - 1);
+}
+// console.log(cutString("GgreatExplanationTetianaa"));
+
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
 /* WRITE YOUR ANSWER HERE */
+
+function giveMeRandom(n) {
+  let arr = [];
+  for (let i = 0; i <= n; i++);
+  {
+    const random = Math.floor(Math.random() * 5);
+    arr.push(random);
+  }
+  return arr;
+}
+//  MY FUNCTION DOES NOT PRINTING 5 RANDOM DIGITS ON CONSOLE ????? PLS GET BACK TO ME !!!
+console.log(giveMeRandom(5));
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
