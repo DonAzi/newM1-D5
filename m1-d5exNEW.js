@@ -7,12 +7,36 @@
 
 /* WRITE YOUR ANSWER HERE */
 
+const giveMeRandom = function (n) {
+  const arr = [];
+  for (let i = 0; i <= n; i++) {
+    arr.push(Math.floor(Math.random() * 10));
+  }
+  return arr;
+};
+
+function checkArray(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 5) {
+      sum += arr[i];
+      return console.log(arr[i] + " is bigger than 5");
+    } else {
+      return console.log(arr[i] + " is smaller than 5");
+    }
+  }
+}
+
+checkArray(giveMeRandom(6));
+
 /* EXTRA 2
  In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
  Create a function called "shoppingCartTotal" which calculates the total due to the shop.
 */
 
 /* WRITE YOUR ANSWER HERE */
+
+function shoppingCard
 
 /* EXTRA 3
  In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
