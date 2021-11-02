@@ -87,9 +87,9 @@ const whoIsBigger = (a, f) => {
 */
 
 const splitMe = (str) => {
-  return str.split();
+  return str.split(" ");
 };
-console.log(splitMe("How are you doing ?"));
+// console.log(splitMe("How are you doing ?"));
 
 /* EXERCISE 4
     Write a function called deleteOne which receives a string and a boolean as parameters.
@@ -104,7 +104,7 @@ function deleteOne(str, bool) {
   return str.substring(0, str.length - 1);
 }
 
-console.log(deleteOne("hakim", false));
+// console.log(deleteOne("Stereo", true));
 
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
@@ -122,15 +122,34 @@ function onlyLetter(str) {
   return result;
 }
 
-console.log(onlyLetter("I have 4 dog888s"));
+// console.log(onlyLetter("I have 4 dog000s"));
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
+function isThisAnEmail(stri) {
+  // if (stri === /\S+@\S+\.\S+/) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  let testFortest = /\S+@\S+\.\S+/;
+
+  return testFortest.test(stri);
+}
+// console.log(isThisAnEmail("hahah@hotmail.it"));
 /* EXERCISE 7
    Write a function called whatDayIsIt that should return the current day of the week.
 */
+
+function whatDayIsIt() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[new Date().getDay()];
+}
+console.log(whatDayIsIt());
 
 /* EXERCISE 8
     Write a function called rollTheDices which receives a number as a parameter.
@@ -143,9 +162,26 @@ console.log(onlyLetter("I have 4 dog888s"));
     }
 */
 
+const rollThatDices = (numa) => {
+  let sum = 0;
+  let value = [];
+
+  for (let j = 0; j < numa; j++) {
+    sum += dice();
+  }
+};
+console.log(rollThatDices(5));
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
+
+// function howManyDays(selectAday) {
+//   let today = Date.now()
+//   let selecedtMilliSeconds = Date.parse(selectAday);
+//   return Math.floor((today - selecedtMilliSeconds) / (1000 * 60 * 60 * 24))
+// }
+// let date = howManyDays(("10 March 2001"))
+//   console.log(date)
 
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
