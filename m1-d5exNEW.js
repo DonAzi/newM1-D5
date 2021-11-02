@@ -36,7 +36,7 @@ checkArray(giveMeRandom(6));
 
 /* WRITE YOUR ANSWER HERE */
 
-function shoppingCard
+// function shoppingCard
 
 /* EXTRA 3
  In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.

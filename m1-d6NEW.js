@@ -96,10 +96,33 @@ console.log(splitMe("How are you doing ?"));
     If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
+function deleteOne(str, bool) {
+  if (bool) {
+    return str.substring(1, str.length);
+  }
+
+  return str.substring(0, str.length - 1);
+}
+
+console.log(deleteOne("hakim", false));
+
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs") => returns "I have  dogs"
 */
+
+function onlyLetter(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (isNaN(str.charAt(i)) || str.charAt(i) == " ") {
+      result += str.charAt(i);
+    }
+  }
+
+  return result;
+}
+
+console.log(onlyLetter("I have 4 dog888s"));
 
 /* EXERCISE 6
    Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
