@@ -149,44 +149,58 @@ function whatDayIsIt() {
 
   return days[new Date().getDay()];
 }
-console.log(whatDayIsIt());
+// console.log(whatDayIsIt());
 
-/* EXERCISE 8
-    Write a function called rollTheDices which receives a number as a parameter.
-    It should invoke the dice() function defined in Ex1 the specified amount of times,
-    and return an object containing a sum property holding the sum of all values extracted
-    and a values array containing the single values of the dicerolls themselves.
-    Example: RollTheDices(3) => returns {
-        sum: 10
-        values: [3, 3, 4]
-    }
-*/
+// EXERCISE 8
 
-const rollThatDices = (numa) => {
-  let sum = 0;
-  let value = [];
-
-  for (let j = 0; j < numa; j++) {
-    sum += dice();
+//Write a function called rollTheDices which receives a number as a parameter.
+const rollThatDices = (numbar) => {
+  let returnValue = {
+    //and return an object containing a sum property holding the sum of all values extracted
+    sum: 0,
+    //and a values array containing the single values of the dicerolls themselves.
+    value: [],
+  };
+  //It should invoke the dice() function defined in Ex1 the specified amount of times,
+  for (let j = 0; j < numbar; j++) {
+    let ex1DiceLetBe = dice();
+    returnValue.sum += ex1DiceLetBe;
+    returnValue.value.push(ex1DiceLetBe);
   }
+  return returnValue;
 };
-console.log(rollThatDices(5));
+// Example: RollTheDices(3) => returns {
+//   sum: 10
+//   values: [3, 3, 4]
+// }
+// console.log(rollThatDices(5));
+
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
 
-// function howManyDays(selectAday) {
-//   let today = Date.now()
-//   let selecedtMilliSeconds = Date.parse(selectAday);
-//   return Math.floor((today - selecedtMilliSeconds) / (1000 * 60 * 60 * 24))
-// }
-// let date = howManyDays(("10 March 2001"))
-//   console.log(date)
+function howManyDays(selectAday) {
+  let today = Date.now();
+  let selecedtMilliSeconds = Date.parse(selectAday);
+  return Math.floor((today - selecedtMilliSeconds) / (1000 * 60 * 60 * 24));
+}
+let date = howManyDays("10 September 2011");
+// console.log(date);
 
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
 
+function isTodayMyBirthday(bool) {
+  let today = new Date();
+  let myBday = new Date(2021, 11, 1);
+
+  return (
+    today.getDay() === myBday.getDay() && today.getMonth() === myBday.getMonth()
+  );
+}
+
+// console.log(isTodayMyBirthday());
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
 
